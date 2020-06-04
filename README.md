@@ -16,3 +16,5 @@ The comparison has been made using the library BenchmarkDotNet. Advantages of us
 - Automatic warmup (before running iterations)
 - No need to care about choosing a number of iterations (e.g. 100? 1000? 2000000?)
 - No need to wonder about the resolution of the measurment (contrary to familiar DateTime.Now or StopWatch)
+
+(DDD.ValueObject.PerformanceTests\PerformanceFootprint.png)
