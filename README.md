@@ -17,5 +17,9 @@ The comparison has been made using the library BenchmarkDotNet. Advantages of us
 - No need to care about choosing a number of iterations (e.g. 100? 1000? 2000000?)
 - No need to wonder about the resolution of the measurment (contrary to familiar DateTime.Now or StopWatch)
 
+
+Performance comparison has been made on Equals/GetHashCode methods.
+Results are following:
+
 ![alt text](https://github.com/ph-lambert/DDD-ValueObject-Performance-Footprint/blob/master/DDD.ValueObject.PerformanceTests/PerformanceFootprint.png?raw=true)
 
