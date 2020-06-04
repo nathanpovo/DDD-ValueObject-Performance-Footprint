@@ -11,8 +11,10 @@ There exists several implementations of base class for representing DDD Value Ob
 - Vladimir Khorikov (better implemenation): https://enterprisecraftsmanship.com/posts/value-object-better-implementation/
 - ...
 
-The purpose of this project is to compare these different implementations of DDD Value Object, from performance point of view.
-The comparison has been made using the library BenchmarkDotNet. Advantages of using this library includes (among other):
+The purpose of this project is to compare different implementations of DDD Value Object, from performance point of view.
+
+The comparison has been made using the library BenchmarkDotNet.
+Advantages of using this library includes (among other):
 - Automatic warmup (before running iterations)
 - No need to care about choosing a number of iterations (e.g. 100? 1000? 2000000?)
 - No need to wonder about the resolution of the measurment (contrary to familiar DateTime.Now or StopWatch)
