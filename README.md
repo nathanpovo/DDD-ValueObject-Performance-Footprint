@@ -1,6 +1,6 @@
 # DDD-ValueObject-Performance-Footprint
 
-In Domain Driven Desing (DDD), a Value Object is characterized by:
+In Domain Driven Design (DDD), a Value Object is characterized by:
 - No intrinsic identity
 - Immutability
 - Lifetime that depends on a parent Entity class
