@@ -6,7 +6,7 @@ In Domain Driven Design (DDD), a Value Object is characterized by:
 - Lifetime that depends on a parent Entity class
 
 There exists several implementations of base class for representing DDD Value Object:
-- Jimmy Boggard: http://grabbagoft.blogspot.com/2007/06/generic-value-object-equality.html
+- Jimmy Bogard: http://grabbagoft.blogspot.com/2007/06/generic-value-object-equality.html
 - Vladimir Khorikov: https://enterprisecraftsmanship.com/posts/value-object-better-implementation/
 - Vladimir Khorikov (better implemenation): https://enterprisecraftsmanship.com/posts/value-object-better-implementation/
 - ...
