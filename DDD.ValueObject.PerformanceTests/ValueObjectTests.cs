@@ -27,8 +27,8 @@ namespace DDD.ValueObject.PerformanceTests
             address3_VKb = new Address_VK_Better("Freedom avenue", "Molenbeek", "Brussels", "Belgium", "5150");
         }
 
-        // TwoInstancesThatAreEqual
-        // ************************
+        // Two_Value_Objects_With_Same_Properties_Are_Equal
+        // ************************************************
         [Benchmark()]
         public bool Two_Value_Objects_With_Same_Properties_Are_Equal_JB()
         {
@@ -67,8 +67,8 @@ namespace DDD.ValueObject.PerformanceTests
             return address1_VKb.Equals(address1_VKb);
         }
 
-        // TwoInstancesThatAreNotEqual
-        // ***************************
+        // Two_Value_Objects_With_Different_Properties_Are_Not_Equal
+        // *********************************************************
         [Benchmark()]
         public bool Two_Value_Objects_With_Different_Properties_Are_Not_Equal_JB()
         {
