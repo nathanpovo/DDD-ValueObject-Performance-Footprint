@@ -2,8 +2,12 @@
 
 namespace DDD.ValueObject.UnitTests
 {
+    /// <summary>
+    /// Contains template (GoF) test methods about Equals/GetHashCode, that any DDD value object should verify.
+    /// </summary>
     public abstract class ValueObjectBaseTests<T>
     {
+        // 1. Arrange
         public abstract T Instance1 { get; }
         public abstract T InstanceWithSamePropertiesAsInstance1 { get; }
         public abstract T InstanceWithDifferentPropertiesAsInstance1 { get; }
@@ -11,8 +15,6 @@ namespace DDD.ValueObject.UnitTests
         [Fact]
         public void Two_Value_Objects_With_Same_Properties_Should_Be_Equal()
         {
-            // 1. Arrange
-
             // 2. Act
             var areEqual = Instance1.Equals(InstanceWithSamePropertiesAsInstance1);
 
@@ -23,8 +25,6 @@ namespace DDD.ValueObject.UnitTests
         [Fact]
         public void A_Value_Object_Should_Equal_Itself()
         {
-            // 1. Arrange
-
             // 2. Act
             var areEqual = Instance1.Equals(Instance1);
 
@@ -35,8 +35,6 @@ namespace DDD.ValueObject.UnitTests
         [Fact]
         public void Two_Value_Objects_With_Different_Properties_Should_Not_Be_Equal()
         {
-            // 1. Arrange
-
             // 2. Act
             var areEqual = Instance1.Equals(InstanceWithDifferentPropertiesAsInstance1);
 
@@ -47,8 +45,6 @@ namespace DDD.ValueObject.UnitTests
         [Fact]
         public void Two_Value_Objects_With_Same_Properties_Should_Have_Same_HashCode()
         {
-            // 1. Arrange
-
             // 2. Act
             var hash1 = Instance1.GetHashCode();
             var hash2 = InstanceWithSamePropertiesAsInstance1.GetHashCode();
@@ -60,8 +56,6 @@ namespace DDD.ValueObject.UnitTests
         [Fact]
         public void Two_Value_Objects_With_Different_Properties_Should_Have_Different_HashCode()
         {
-            // 1. Arrange
-
             // 2. Act
             var hash1 = Instance1.GetHashCode();
             var hash2 = InstanceWithDifferentPropertiesAsInstance1.GetHashCode();
