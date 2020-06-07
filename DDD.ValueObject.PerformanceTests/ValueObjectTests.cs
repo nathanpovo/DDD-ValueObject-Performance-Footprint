@@ -10,6 +10,7 @@ namespace DDD.ValueObject.PerformanceTests
         private Address_JB address1_JB, address2_JB, address3_JB;
         private Address_VK address1_VK, address2_VK, address3_VK;
         private Address_VK_Better address1_VKb, address2_VKb, address3_VKb;
+        private Address_MS address1_MS, address2_MS, address3_MS;
 
         [GlobalSetup]
         public void Setup()
@@ -25,6 +26,10 @@ namespace DDD.ValueObject.PerformanceTests
             address1_VKb = new Address_VK_Better("Freedom avenue", "Molenbeek", "Brussels", "Belgium", "1080");
             address2_VKb = new Address_VK_Better("Freedom avenue", "Molenbeek", "Brussels", "Belgium", "1080");
             address3_VKb = new Address_VK_Better("Freedom avenue", "Molenbeek", "Brussels", "Belgium", "5150");
+
+            address1_MS = new Address_MS("Freedom avenue", "Molenbeek", "Brussels", "Belgium", "1080");
+            address2_MS = new Address_MS("Freedom avenue", "Molenbeek", "Brussels", "Belgium", "1080");
+            address3_MS = new Address_MS("Freedom avenue", "Molenbeek", "Brussels", "Belgium", "5150");
         }
 
         // Two_Value_Objects_With_Same_Properties_Are_Equal
@@ -47,6 +52,12 @@ namespace DDD.ValueObject.PerformanceTests
             return address1_VKb.Equals(address2_VKb);
         }
 
+        [Benchmark()]
+        public bool Two_Value_Objects_With_Same_Properties_Are_Equal_MS()
+        {
+            return address1_MS.Equals(address2_MS);
+        }
+
         // SameInstance
         // ************
         [Benchmark()]
@@ -65,6 +76,12 @@ namespace DDD.ValueObject.PerformanceTests
         public bool A_Value_Object_Equals_Itself_VK_Better()
         {
             return address1_VKb.Equals(address1_VKb);
+        }
+
+        [Benchmark()]
+        public bool A_Value_Object_Equals_Itself_MS()
+        {
+            return address1_MS.Equals(address1_MS);
         }
 
         // Two_Value_Objects_With_Different_Properties_Are_Not_Equal
@@ -87,6 +104,12 @@ namespace DDD.ValueObject.PerformanceTests
             return address1_VKb.Equals(address3_VKb);
         }
 
+        [Benchmark()]
+        public bool Two_Value_Objects_With_Different_Properties_Are_Not_Equal_MS()
+        {
+            return address1_MS.Equals(address3_MS);
+        }
+
         // GetHashCode
         // ***********
         [Benchmark()]
@@ -102,9 +125,15 @@ namespace DDD.ValueObject.PerformanceTests
         }
 
         [Benchmark()]
-        public int GetHashCode_Of_Value_Object_Better()
+        public int GetHashCode_Of_Value_Object_VK_Better()
         {
             return address1_VKb.GetHashCode();
+        }
+
+        [Benchmark()]
+        public int GetHashCode_Of_Value_Object_MS()
+        {
+            return address1_MS.GetHashCode();
         }
     }
 }
